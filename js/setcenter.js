@@ -86,8 +86,8 @@
     }
   //错误信息
       function onError(obj) {
-          alert(obj.info + '--' + obj.message);
-          console.log(obj);
+//        alert(obj.info + '--' + obj.message);
+//        console.log(obj);
           return; 
         }
      //}
