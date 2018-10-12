@@ -121,8 +121,9 @@ function append_text (obj,activity_ID,a_img,a_TITLE,activity_content,a_date,adre
 	var value4="<div class='date'>"+a_date+"</div><div class='address'>地点："+adress+"</div></div></div>"
 	var value = value1+value2+value3+value4;
 	$(obj).append(value);
-activity_on($("#"+activity_ID),"index.html");
+activity_on($("#"+activity_ID),ACT_link);
 }
+append_text ($("#activity-list"),"activity1","/","Love","佘嘉熙我真的好喜欢你","10-10","下塘西路","index.html");
 $(".add").mousedown(function(){
 	$("#note").addClass('then');	
 })
