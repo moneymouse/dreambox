@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ITRClub DreamBox 活动创建</title>
+        <script src="./js/jquery.min.js"></script>
+        <script>
+        function a(){
+    var iframe = document.getElementById('test').contentWindow;
+    document.getElementById('test').onload = function(){
+      iframe.postMessage('hello','https://m.amap.com/picker/');
+    };
+    window.addEventListener("message", function(e){
+      alert('您选择了:' + e.data.name + ',' + e.data.location)
+    }, false);
+}
+       a();
+        </script>
+   
+    </head>
+    <body>
+      <div>
+      <iframe id='test'></iframe>
+       </div>
+      <div name="content" id="editor">
+        <br />
+        <br />
+        <br />
+         </div>
+         <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+<script>
+    var data;
+    ClassicEditor.create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: '/'
+            }
+        }
+    ).then(editor => {
+    window.editor = editor;
+    data = editor.getData();
+    console.log(data);
+    } )
+    .catch(error => {
+        console.log(error);
+    } );
+</script>
+       </body>
+</html>
+
