@@ -24,6 +24,12 @@
             height: 100%;
             margin: 0px;
       }
+      #show-box{
+      	        position: absolute;
+	        	bottom: 20px;
+	        	left:8px;
+	        }
+	
     </style>
     <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=b26b94c7da7aee6dd491ceb499fa07d5"></script>
     <script src="//webapi.amap.com/ui/1.0/main.js"></script>
@@ -40,8 +46,21 @@
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
 </div>
-<script type="text/javascript" src="js/activity.js">
-
-</script>
+<div id="show-box">
+    <div class="col-lg-6">
+                <div class="input-group input-group-lg">
+                    <input type="text" id="show" class="form-control" disabled="true">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="make">在此创建</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+</div>
 </body>
+<script type="text/javascript" src="js/activity.js"></script>
+<script type="text/javascript">
+	$("#make").click(function(){
+		window.location.href="activity.html"
+	})
+</script>
 </html>

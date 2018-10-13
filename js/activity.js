@@ -1,10 +1,23 @@
-   var map = new AMap.Map('container', {
+var send_position;
+var map = new AMap.Map('container', {
         //缩放等级：13
         zoom:13,
         //视图模式：3D
         viewMode:"3D",
         mapStyle:"amap://styles/729dc12fe94173bff4a7536c075c7a5c"
     });
+    AMapUI.loadUI(['misc/PositionPicker'], function(PositionPicker) {
+    var positionPicker = new PositionPicker({
+        mode:'dragMap',//设定为拖拽地图模式，可选'dragMap'、'dragMarker'，默认为'dragMap'
+        map:map//依赖地图对象
+    });
+    positionPicker.on('success', function(positionResult) {
+    $("#show").val(positionResult.address);
+    send_position = positionResult.position;
+});
+    positionPicker.start();
+    
+});
     //输入提示
     AMap.plugin('AMap.Autocomplete',function(){//回调函数
     var autoOptions = {
@@ -21,7 +34,7 @@
     // city 指定进行编码查询的城市，支持传入城市名、adcode 和 citycode
     city: ''
   })
-
+ 
   geocoder.getLocation(a, function(status, result) {
     if (status === 'complete' && result.info === 'OK') {
       // result中对应详细地理坐标信息
@@ -33,8 +46,9 @@
                 }
                 marker.setPosition(lnglat);
                 map.setFitView(marker);
-      $("#show").val(result.geocodes[0].addressComponent);
-      //ajax发送lnglat
+                map.remove(marker);
+                $("#show").val(result.geocodes[0].addressComponent);
+                
                 
     }
     else{
@@ -44,18 +58,8 @@
 })
   
    })
-AMapUI.loadUI(['misc/PositionPicker'], function(PositionPicker) {
-    var map = new AMap.Map('container',{
-        zoom:16
-    })
-    var positionPicker = new PositionPicker({
-        mode:'dragMap',//设定为拖拽地图模式，可选'dragMap'、'dragMarker'，默认为'dragMap'
-        map:map//依赖地图对象
-    });
-    positionPicker.on('success', function(positionResult) {
-    $("#show").val(positionResult.address);
-      //ajax发送positionResult.lnglat
-});
-    positionPicker.start();
-
-});
+   $("#make").click(function(){
+   	var send_adress = document.getElementById('show').value;
+   	alert(send_position);
+   	
+   });
