@@ -20,30 +20,24 @@
     </head>
     <body>
       <div>
-      <iframe id='test'></iframe>
+      <iframe src="https://m.amap.com/picker/?center=113.28978,23.12415&key=608d75903d29ad471362f8c58c550daf" id='test'></iframe>
        </div>
-      <div name="content" id="editor">
+       <div id="show">
+       	
+       </div>
+      <!--<div name="content" id="editor">
         <br />
         <br />
         <br />
          </div>
-         <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-<script>
-    var data;
-    ClassicEditor.create(document.querySelector('#editor'), {
-            ckfinder: {
-                uploadUrl: '/'
-            }
-        }
-    ).then(editor => {
-    window.editor = editor;
-    data = editor.getData();
-    console.log(data);
-    } )
-    .catch(error => {
-        console.log(error);
-    } );
-</script>
+         <script src="https://cdn.ckeditor.com/ckeditor5/11.1.0/classic/ckeditor.js"></script>
+         <script>
+    ClassicEditor.create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>-->
        </body>
+       <script type="text/javascript" src="../../assets/bootstrap/js/activity.js"></script>
 </html>
 
