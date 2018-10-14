@@ -129,7 +129,7 @@ $(".add").mousedown(function(){
 })
 $(".add").mouseup(function(){
 	$("#note").removeClass("then");
-	location.href="index.html";
+	location.href="find.html";
 })
 $(".add").mouseleave(function() {
 	$("#note").removeClass("then");

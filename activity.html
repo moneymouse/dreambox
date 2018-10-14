@@ -3,26 +3,46 @@
     <head>
         <meta charset="UTF-8">
         <title>ITRClub DreamBox 活动创建</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> 
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        
         <style type="text/css">
-          
+          .ck-editor__editable{
+          	min-height: 400px;
+          	min-width: 300px;
+          	
+          }
+          /*.editor{
+          	margin: 0 auto;
+          }*/
         </style>
         <script src="./js/jquery.min.js"></script>
         <script src="./js/acitivity.js"></script>
    
     </head>
     <body>
-      
-    <input type="text" name="" id="" value="" />  
-    <div name="content" id="editor">
-        
- </div>
+    <br  />
+    <div style="width: 400px;margin: 0 auto;">
+    <div class="input-group">
+      <span class="input-group-addon"><b>标题</b></span>
+      <input type="text" class="form-control" placeholder="标题" aria-describedby="sizing-addon2">
+    </div>
+    <br  />
+    <div style="position: absolute;top:50px;" id="editor" placeholder="内容"></div>
+    </div>
 <script src="ckeditor5-build-classic/ckeditor.js"></script>
 <script>
     var data;
     ClassicEditor.create(document.querySelector('#editor'), {
             ckfinder: {
                 uploadUrl: '/'
-                
             }
         }
     ).then(editor => {
