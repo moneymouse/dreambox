@@ -59,7 +59,8 @@ var map = new AMap.Map('container', {
   
    })
    $("#make").click(function(){
-   	var send_adress = document.getElementById('show').value;
-   	alert(send_position);
+   	send_adress = document.getElementById('show').value;
+   $("#S_address").val(send_address);
+   	
    	
    });

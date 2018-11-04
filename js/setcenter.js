@@ -92,6 +92,7 @@
         }
      //}
  }
+
       //点击搜索数据复制给搜索框
     $(document).on('click','.click_work',function(){
 			var word = $(this).text();
