@@ -1,95 +1,80 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="{CHARSET}">
-		<title></title>
-		<meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  
-        <link rel="stylesheet" href="css/style.css">
- 
-        <!-- Bootstrap -->
-        <link href="./css/bootstrap.min.css" rel="stylesheet">
-        <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-        <script src="./js/jquery.min.js"></script>
-        <!--加载异步搜索框-->
-        <script type="text/javascript" src="js/JsonpAjax.js"></script>
-        <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后--->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所�?JavaScript 插件都依�?jQuery，所以必须放在前�? -->
+    <script src="./js/jquery.min.js"></script>
+    <!--加载异步搜索框-->
+    <script type="text/javascript" src="js/JsonpAjax.js"></script>
+    <!-- 加载 Bootstrap 的所�?JavaScript 插件。你也可以根据需要只加载单个插件-->
+    <!-- HTML5 shim �?Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能-->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面�?Respond.js 不起作用 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-		<!--<meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">-->
-        <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no">-->
-        
-	    <link rel="stylesheet" type="text/css" href="css/s_b.css"/>
-	    
-	</head>
-	<body>
-		<!--调用高德地图api-->
-  	    <script src="https://webapi.amap.com/maps?v=1.4.2&key=b26b94c7da7aee6dd491ceb499fa07d5"></script>
-        <!--引用Jquery-->
-        <script src="./js/jquery.min.js"></script>
-        <!--地图容器-->
-        <div id="container" tabindex="0"></div>
-        <!--搜索框容器-->
-        <div id = "MessageBox2">
-        	<table border="0" cellspacing="0" cellpadding="10" >
-        	<td>	
-        	<div class="col-lg-6">
-                <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
+    <!--<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no">-->
+    <link rel="stylesheet" type="text/css" href="css/s_b.css" />
+</head>
+
+<body>
+    <!--调用高德地图api-->
+    <script src="https://webapi.amap.com/maps?v=1.4.2&key=b26b94c7da7aee6dd491ceb499fa07d5"></script>
+    <!--引用Jquery-->
+    <script src="./js/jquery.min.js"></script>
+    <!--地图容器-->
+    <div id="container" tabindex="0"></div>
+    <!--搜索框容器-->
+    <div id="MessageBox2">
+        <table border="0" cellspacing="0" cellpadding="10">
+            <td>
+                <div class="col-lg-6">
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="searchbox" class="form-control" placeholder="查找活动...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">查询!</button>
                     </span>
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                <div class="click_work">
+                            <div id="result1" class="result">123</div>
+                        </div>
+                        
             </td>
-            </table>
-            
-        </div>     
-        <!--消息框-->
-        <div class="real_messagebox">
-        	<button class="m_btn"></button>
-        	<span id="icon_m" class = "glyphicon glyphicon-comment"></span>
-        </div>
-        <a id="makesignup" href="register.html">我是社团，我要创建活动</a>
-        <script type="text/javascript" src="js/setcenter.js">
-        	function retrun () {
-        		alert("user onclick");
-        	}
-        </script>
-        <!--按钮-->
+        </table>
+    </div>
     <div class='form-overlay'></div>
-        <div class='icon fa fa-pencil' id='form-container'>
+    <div class='icon fa fa-pencil' id='form-container'>
         <span class='icon fa fa-close' id='form-close'></span>
         <div id="sign">
-  	    	<div id="form-head2">
-    			<h1 class='pre'>欢迎回家</h1>
-    			<p class="pre">ITRclub竭诚为你服务...</p>
-        	</div>
+            <div id="form-head2">
+                <h1 class='pre'>欢迎回家</h1>
+                <p class="pre">ITRclub竭诚为你服务...</p>
+            </div>
         </div>
-   	<div id='form-content'>
-   		<h1 class="pre"><b>附近的活动</b></h1> 
-  	<div id="activity-list"></div>
-  
-  	<div id="note" class="add">
-  		<span class="glyphicon glyphicon-plus" aria-hidden="true" style="text-align: center;margin: 0 auto"></span>
-  	</div>
-   	</div>
-    </div>  
-   <script  src="js/index.js"></script>
-	</body>
+        <div id='form-content'>
+            <h1 class="pre"><b>附近的活动</b></h1>
+            <div id="activity-list"></div>
+            <div id="note" class="add">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" style="text-align: center;margin: 0 auto"></span>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/setcenter.js"></script>
+</body>
+
 </html>

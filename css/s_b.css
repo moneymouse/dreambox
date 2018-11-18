@@ -1,28 +1,33 @@
-           body,html,#container{
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-      }
-           #MessageBox{
-           	/*background-color: #fff;*/
-	        /*padding-right: 10px;*/
-	        /*padding-left: 10px;*/ 
-	        width: 100%;
-	        position: absolute;
-	        font-size: 30px;
-	        left: 5px;
-	        top: 5px;
-	        /*border-radius: 3px;*/
-	        /*border: 1px solid #ccc;*/
-	        /*line-height: 30px;*/
+           body,
+           html,
+           #container {
+               width: 100%;
+               height: 100%;
+               margin: 0px;
            }
-           #MessageBox2{
-           position: absolute;
-           font-size:28px;
-           left: 5px;
-           top: 5px;
-           
+
+           #MessageBox {
+               /*background-color: #fff;*/
+               /*padding-right: 10px;*/
+               /*padding-left: 10px;*/
+               width: 100%;
+               position: absolute;
+               font-size: 30px;
+               left: 5px;
+               top: 5px;
+               /*border-radius: 3px;*/
+               /*border: 1px solid #ccc;*/
+               /*line-height: 30px;*/
            }
+
+           #MessageBox2 {
+               position: absolute;
+               font-size: 28px;
+               left: 5px;
+               top: 5px;
+
+           }
+
            /*.i-search{
            padding-left: 35px;
            width: 320px;
@@ -30,80 +35,67 @@
              border-radius:25px;
              background: linear-gradient(180deg,rgba(0,130,220,0),rgba(0,130,220,1));
              box-shadow: 0px 5px 5px #888888;
-             font-family: "楷体";
+             font-family: "¿¬Ìå";
 }            
            */
-            
-}
-          input::-webkit-input-placeholder {
-           /* placeholder颜色  */
-           color: #737373;}
-          #btn{
-          position: absolute;
-          top: 0px;
-          left: 322px;
-          padding: 21px 22px;
-          font-size: 18px;
-          line-height: 1.3333333;
-          border-radius: 6px;
-          background-color: cornflowerblue;
-          background: linear-gradient(180deg,rgba(0,130,220,0),rgba(0,130,220,1));
-          box-shadow: 0px 5px 5px #888888;
-          }
-          /*.search-icon{
+
+           }
+
+           input::-webkit-input-placeholder {
+               /* placeholderÑÕÉ«  */
+               color: #737373;
+           }          
+           /*.search-icon{
              position: absolute;
              left: 330px;
              top: 5px;
              }
             #word{
-		position: absolute;
-		z-index: 99;
-		width: 320px;
-		height: auto;
-		background-color: white;
-		border: black solid 1px;
-		display: none;
-		box-shadow: 0 0 1px #888888;
-		border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;
-        font-family: "宋体";
-	}*/
-	    .click_work:hover{
-		color: black;
-		background-color: #D5D5D5;
-	}
-	   .click_work{
-		padding-bottom: 3px;
-		padding-top:3px;
-		font-weight:lighter;
-		font-size: 25px;
-		cursor:pointer;/*鼠标放上变成小手*/
-		
-	}
-        .real_messagebox{
-        	position: absolute; 
-        	top: 60px;
-        	left: 20px;}
-        .m_btn{
-        	width: 37px; 
-            height: 37px; 
-            background: #FFFFFF; 
-            -moz-border-radius: 50px; 
-            -webkit-border-radius: 50px; 
-            border-radius: 50px; 
-            border-left:0px;border-top:0px;border-right:0px;border-bottom:1px
-            /*opacity: 0.6;*/;
-            box-shadow: 2px 2px 3px #888888;
+    position: absolute;
+    z-index: 99;
+    width: 320px;
+    height: auto;
+    background-color: white;
+    border: black solid 1px;
+    display: none;
+    box-shadow: 0 0 1px #888888;
+    border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;
+        font-family: "ËÎÌå";
+  }*/
+           #icon_m {
+               position: absolute;
+               font-size: 20px;
+               top: 9px;
+               left: 9px;
+           }
 
-        	}
-        #icon_m{
-        	position: absolute;
-        	font-size: 20px;
-        	top: 9px;
-        	left: 9px;
-        	}
-        #makesignup{
-        	position: absolute;
-        	font-size: 15px;
-        	bottom: 0px;
-        	right: 0px;
-        }
+           #makesignup {
+               position: absolute;
+               font-size: 15px;
+               bottom: 0px;
+               right: 0px;
+           }
+           .click_work.work{
+               display:block;
+           }
+           .click_work{
+               position: relative;
+               display:none;
+               background-color: #FFFFFF;
+               left:17px; 
+               top:1px;
+               font-size: 18px;
+               width:260px;
+               cursor:pointer;
+               box-shadow:0 0 1px #DCE3E6;
+           }
+           .result{
+            display:none;
+           }
+           .result.work{
+            display: block;
+            padding: 4px;
+           }
+           .result.work.point{
+            background-color: #C5C5C5; 
+           }

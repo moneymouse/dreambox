@@ -397,7 +397,7 @@ input:-webkit-autofill {
 	height: 130px;
 	width:400px;
 	border:none;
-	border-radius: 25px;
+	border-radius: 15px;
 	box-shadow: 2px 2px 2px #262626; 
 }
 #note.add.then{
@@ -421,6 +421,7 @@ input:-webkit-autofill {
 	text-align: center;
 	height: 130px;
 	border:none;
+	width:400px;
 }
 .activity.then{
 	background-color: #CCCCCC;
@@ -428,7 +429,7 @@ input:-webkit-autofill {
 	margin:0 auto;
 	text-align: center;
 	height: 130px;
-	
+	width:400px;
 	border:none;
 }
 .active-set {

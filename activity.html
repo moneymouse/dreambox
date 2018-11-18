@@ -1,65 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>ITRClub DreamBox 活动创建</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> 
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        
-        <style type="text/css">
-          .ck-editor__editable{
-          	min-height: 400px;
-          	min-width: 300px;
-          	
-          }
-          /*.editor{
-          	margin: 0 auto;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <title>ITRClub DreamBox 活动创建</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    .ck-editor__editable {
+        min-height: 400px;
+        min-width: 300px;
+
+    }
+
+
+    /*.editor{
+            margin: 0 auto;
           }*/
-        </style>
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/acitivity.js"></script>
-   
-    </head>
-    <body>
-    <br  />
+    </style>
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <br />
     <div style="width: 400px;margin: 0 auto;">
-    <div class="input-group">
-    <span class="input-group-addon"><b>地点</b></span>
-    <input type="text" class="form-control" id="S_address" aria-describedby="sizing-addon2" disabled="true">
+        <div class="input-group">
+           <span class="input-group-addon"><b>地点</b></span>
+           <input type="text" class="form-control" id="S_address" aria-describedby="sizing-addon2" disabled="true" style="display:inline"/> 
+           <span class="input-group-addon" style="background-color:#ffffff;cursor: pointer;" id="reset_address">重新选择</span>
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><b>标题</b></span>
+            <input type="text" id="activity_title" class="form-control" placeholder="标题" aria-describedby="sizing-addon2" />
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><b>活动时间</b></span>
+            <input type="datetime-local" id="activity_time" value="2017-12-17T17:21" class="form-control" aria-describedby="sizing-addon2" />
+        </div>
+        <br />
+        <div style="position: absolute;top:50px;" id="editor" placeholder="内容"></div>
+        <br />
+        <input type="button" id="Submit" value="提交" class="form-control" style="border-radius:5px;width:100%;" aria-describedby="sizing-addon2" />
+        <script>
+        function submit(obj){
+        obj.mousedown(function() { obj.css("background-color", "#cccccc"); })       
+        obj.mouseup(function() { obj.css("background-color", "#ffffff"); })
+        obj.on("touchstart", function() { obj.css("background-color", "#cccccc"); })
+        obj.mouseup("touchend", function() { obj.css("background-color", "#ffffff"); })
+        }
+        submit($("#Submit"));
+        submit($("#reset_address"));
+        </script>
     </div>
-    <br  />
-    <div class="input-group">
-      <span class="input-group-addon"><b>标题</b></span>
-      <input type="text" class="form-control" placeholder="标题" aria-describedby="sizing-addon2">
-    </div>
-    <br  />
-    <div style="position: absolute;top:50px;" id="editor" placeholder="内容"></div>
-    </div>
-<script src="ckeditor5-build-classic/ckeditor.js"></script>
-<script>
+    <script src="ckeditor5-build-classic/ckeditor.js"></script>
+    <script>
     var data;
     ClassicEditor.create(document.querySelector('#editor'), {
             ckfinder: {
                 uploadUrl: '/'
             }
-        }
-    ).then(editor => {
-    window.editor = editor;
-    data = editor.getData();
-    console.log(data);
-    } )
-    .catch(error => {
-        console.log(error);
-    } );
-</script>
-       </body>
-       
-</html>
+        }).then(editor => {
+            window.editor = editor;
+            data = editor.getData();
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    function reback(){
+        window.location.href="find.html";
+    }
+    </script>
+    <script type="text/javascript" src="./js/data.js"></script>
+    <script type="text/javascript" src="./js/activity.js" charset="UTF-8"></script>
+</body>
 
+</html>
